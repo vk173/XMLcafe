@@ -12,4 +12,3 @@ Project is licensed under the terms of the MIT license
 <p align="center"><img src="https://github.com/vk173/XMLcafe/blob/main/img/settings.gif"></p>
 <h2>Frontend</h2>
 <h3><a href="#!">Demo</a></h3>
-<p align="center"><img src="https://github.com/vk173/XMLcafe/blob/main/img/mobile.jpg"></p>
