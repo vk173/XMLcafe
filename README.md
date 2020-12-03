@@ -12,5 +12,3 @@ Project is licensed under the terms of the MIT license
 <p align="center"><img src="https://github.com/vk173/XMLcafe/blob/main/img/settings.gif"></p>
 <h2>Frontend</h2>
 <h3><a href="https://vk173.github.io/xmlcafe" target="_blank">Demo</a></h3>
-*click below*
-<a href="https://vk173.github.io/xmlcafe" target="_blank">New Tab</a>
