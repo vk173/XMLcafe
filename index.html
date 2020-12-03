@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="font_family_google_fira" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700,400italic,500italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <title></title>
+</head>
+<body>
+  <header id="header">
+    <div id="top" class="top">
+      <div class="topBox">
+        <div class="logo">
+          <a id="logo" href="#header"><img src="../img/load.svg" alt="Logo"></a>
+        </div>
+        <div class="topNav">
+          <a id="hrefContacts" href="#contacts">Contacts</a>
+        </div>
+        <div id="telephone">
+        </div>
+      </div>
+      <button id="mobileNav"></button>
+    </div>
+    <nav id="nav" class="horizontal">
+      <ul id="ulNav" class="horizontalNav box">
+      </ul>
+    </nav>
+  </header>
+  <ul id="navNegative" class="navNegative">
+    <li><a id="hrefMobileContacts" href="#contacts">Contacts</a></li>
+  </ul>
+  <div>
+    <a href="" id="cart-modal" class="js-open-modal" data-modal="cart"><span id="on-cart" class="hidden"></span></a>
+    <a href="status.html" id="on-order" class="hidden"></a>
+    <div class="overlay js-overlay-modal"></div>
+    <div class="modal" data-modal="cart">
+      <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+      <h2>My order</h2>
+      <span id="out">
+      </span>
+      <div id="list"></div>
+      <form method="post" action="order.php" onsubmit='if(out.innerHTML == "<span>Total </span> $0<br><span>Weight </span>0 lb"){list.innerHTML = "<center><h2>Empty order</h2></center>"; return false;}'>
+        <div class="box-order">
+          <input type="hidden" id="dataList" name="dataList" value="">
+          <input id="name" type="text" name="name" placeholder="Name" value="" required>
+          <input id="tel" type="tel" name="tel" placeholder="Telephone" value="" required>
+          <input id="address" type="text" name="address" placeholder="Address" value="" required>
+          <input id="comment" type="text" name="comment" placeholder="Comment" value="">
+          <div>
+            <input type="submit" value="Buy" name="">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <main id ="main">
+    <div class="content" id="page-content" itemscope itemtype="https://schema.org/FoodEstablishment">
+      <meta itemprop="name" content="">
+      <meta itemprop="address" content="">
+      <meta itemprop="telephone" content="">
+      <meta itemprop="priceRange" content="">
+      <meta itemprop="servesCuisine" content="">
+      <meta itemprop="image" content="">
+    </div>
+    <div id ="content" class="box">
+      <div class="contact" id="contacts"></div>
+      <div itemscope itemtype="https://schema.org/Menu">
+        <div id="MenuSection" itemscope itemprop="hasMenuSection" itemtype="https://schema.org/MenuSection">
+          <meta itemprop="name" content="Menu">
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/ajax.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
