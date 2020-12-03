@@ -11,4 +11,4 @@ Project is licensed under the terms of the MIT license
 <h3>Admin panel</h3>
 <p align="center"><img src="https://github.com/vk173/XMLcafe/blob/main/img/settings.gif"></p>
 <h2>Frontend</h2>
-<h3><a href="#!">Demo</a></h3>
+<h3><a href="https://vk173.github.io/xmlcafe">Demo</a></h3>
