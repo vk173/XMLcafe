@@ -18,7 +18,10 @@ file_put_contents('xml/backup_orders.xml', $old, LOCK_EX);
   $numOrder = 1;
 }
 
-$text = "<order><date>$thisDate</date><number>$numOrder</number><name>$arrayPOST[name]</name><tel>$arrayPOST[tel]</tel><address>$arrayPOST[address]</address><dataList>$arrayPOST[dataList]</dataList><comment>$arrayPOST[comment]</comment></order></root>";
+$cryptedTel = openssl_encrypt($arrayPOST[tel], 'CAMELLIA-128-ECB', 'OCXMLcafe');
+$cryptedAddress = openssl_encrypt($arrayPOST[address], 'CAMELLIA-128-ECB', 'OCXMLcafe');
+
+$text = "<order><date>$thisDate</date><number>$numOrder</number><name>$arrayPOST[name]</name><tel>$cryptedTel</tel><address>$cryptedAddress</address><dataList>$arrayPOST[dataList]</dataList><comment>$arrayPOST[comment]</comment></order></root>";
 file_put_contents('xml/orders.xml', $text, FILE_APPEND | LOCK_EX);
 
 $optionReplace = array('.', ':');

@@ -33,7 +33,6 @@ function stickNav() {
 var lastScrollTop = 0;
 window.addEventListener("scroll", function(event){
 var st = document.getElementById("main").getBoundingClientRect().top;
-console.log(lastScrollTop);
 if (st > lastScrollTop && lastScrollTop < -20){
   document.getElementById("nav").classList.add("off");
 } else {
@@ -60,6 +59,12 @@ function selectAdd() {
     var selectAdd = 'a[href="#'+id+'"]';
     if( 0 >= Math.floor(tp) && 0 < Math.floor(btm)){
       document.querySelector(selectAdd).classList.add('active');
+      var screenWidth = window.screen.width;
+      var elNavWidth = document.querySelector(selectAdd).scrollWidth;
+      var elNavLeft = document.querySelector(selectAdd).getBoundingClientRect().left;
+      var thisSize = elNavWidth + elNavLeft;
+      if(thisSize > screenWidth)document.querySelector('#nav').scrollBy(10, 0);
+      if(elNavLeft < 0)document.querySelector('#nav').scrollBy(-10, 0);
     }else{
       document.querySelector(selectAdd).classList.remove('active');
     }
@@ -69,7 +74,6 @@ function selectAdd() {
 function scrollT() {
   var linkNav = document.querySelectorAll('[href*="#"]'),
   V = 0.2;
-  console.log(linkNav);
   linkNav.forEach(function(i){
     i.addEventListener('click', function(e) {
       e.preventDefault();
@@ -203,7 +207,6 @@ function hrefTopNav() {
   });
   document.getElementById('hrefMobileContacts').addEventListener('click', function(e) {
     document.getElementById('contacts').classList.add('active');
-    console.log('Contacts');
     if (elСheck) document.getElementById('interior').classList.remove('active');
   });
   if (elСheck) {
